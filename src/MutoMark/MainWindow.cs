@@ -19,9 +19,16 @@ namespace MutoMark
         public MainWindow()
         {
             InitializeComponent();
+            this.Visible = false;
+            this.trayIcon.Visible = true;
+        }
+                
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             using (var dlg = new OpenFileDialog())
             {

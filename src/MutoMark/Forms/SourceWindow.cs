@@ -26,7 +26,7 @@ namespace MutoMark.Forms
             this.Text += " - " + fileName;
             this._filePath = fileName;
             this.SetDocument();
-            this.SetupWatchDog(fileName);
+            this.SetupWatchDog(fileName);            
         }
 
         private void SetDocument()

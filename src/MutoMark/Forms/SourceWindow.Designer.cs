@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SourceWindow));
             this.browser = new System.Windows.Forms.WebBrowser();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.fileStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -74,6 +75,7 @@
             this.ClientSize = new System.Drawing.Size(830, 680);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.browser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SourceWindow";
             this.Text = "MutoMark!";
             this.statusStrip1.ResumeLayout(false);

@@ -11,13 +11,20 @@ namespace MutoMark.Model
 {
     public class Document
     {
-        private Markdown _processor = new Markdown();
+        private Markdown _processor;
 
         public string MarkDownSource { get; private set; }
 
         public Document(string markDown)
         {
             this.MarkDownSource = markDown;
+
+            var options = new MarkdownOptions();
+            options.AutoHyperlink = true;
+            options.AutoNewLines = true;
+            options.LinkEmails = true;
+            
+            this._processor = new Markdown(options);
         }
 
         public override string ToString()

@@ -38,9 +38,8 @@ namespace MutoMark.Forms
             else
             {
                 this.fileStatus.Text = "Loading...";
-                var markdown = this.GetSource();
-                var html = this._transformer.Transform(markdown);
-                this.browser.DocumentText = html;
+                var doc = new Document(this.GetSource());
+                this.browser.DocumentText = doc.ToString();
                 this.fileStatus.Text = Path.GetFileName(this._filePath);
             }
         }

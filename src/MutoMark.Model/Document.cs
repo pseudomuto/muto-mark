@@ -11,47 +11,66 @@ namespace MutoMark.Model
 {
     public class Document
     {
-        private Markdown _processor;
-
+        private MDTransformer _transformer;
+        
         public string MarkDownSource { get; private set; }
 
-        public Document(string markDown)
+        public IMarkdownProcessor Processor { get { return this._transformer.Processor; } }
+
+        public Document(string markDown, IMarkdownProcessor processor)
         {
             this.MarkDownSource = markDown;
-
-            var options = new MarkdownOptions();
-            options.AutoHyperlink = true;
-            options.AutoNewLines = true;
-            options.LinkEmails = true;
-            
-            this._processor = new Markdown(options);
+            this._transformer = new MDTransformer(processor);
         }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("<style type=\"text/css\">");
-            sb.Append(this.GetStyleSheet("github"));
-            sb.Append("</style>");
+            sb.Append("<html><head>");            
+            this.AddStylesheet(sb);
+            sb.Append("</head><body>");
 
-            sb.Append("<div class=\"js-comment-body comment-body markdown-body markdown-format\">");
-            var html = this._processor.Transform(this.MarkDownSource);
-            return sb.Append(html).Append("</div>").ToString();
+            var template = this.GetTemplate(this.Processor.TemplateName);
+            var html = template.Replace("##BODY##", this._transformer.Transform(this.MarkDownSource));
+                        
+            return sb.Append(html).Append("</body></html>").Replace("\r", "\r\n").ToString();
+        }
+
+        private void AddStylesheet(StringBuilder sb)
+        {
+            var styleSheet = this.Processor.StylesheetName;
+
+            if (!string.IsNullOrEmpty(styleSheet))
+            {
+                sb.Append("<style type=\"text/css\">");
+                sb.Append(this.GetStyleSheet(styleSheet));
+                sb.Append("</style>");
+            }
+        }
+
+        private string GetTemplate(string name)
+        {
+            return this.GetResource(name + ".html");
         }
 
         private string GetStyleSheet(string name)
+        {
+            return this.GetResource(name + ".css");
+        }
+
+        private string GetResource(string name)
         {
             Stream stream = null;
             string result = string.Empty;
 
             try
             {
-                stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MutoMark.Model.Resources." + name + ".css");
+                stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MutoMark.Model.Resources." + name);
                 using (var reader = new StreamReader(stream))
                 {
                     result = reader.ReadToEnd();
                 }
-                 
+
             }
             finally
             {

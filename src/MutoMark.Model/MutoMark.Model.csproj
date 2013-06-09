@@ -46,13 +46,18 @@
   <ItemGroup>
     <Compile Include="Document.cs" />
     <Compile Include="MDTransformer.cs" />
+    <Compile Include="Processors\GitHubProcessor.cs" />
+    <Compile Include="Abstractions\IMarkdownProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\github.css" />
+    <EmbeddedResource Include="Resources\github\style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\github\template.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

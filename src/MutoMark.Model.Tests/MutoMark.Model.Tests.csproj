@@ -55,12 +55,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MDTransformerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GitHubProcessorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <EmbeddedResource Include="Resources\README.md" />
+    <EmbeddedResource Include="Resources\github.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MutoMark.Model\MutoMark.Model.csproj">

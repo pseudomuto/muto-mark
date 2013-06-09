@@ -15,8 +15,8 @@ namespace MutoMark.Forms
     public partial class SourceWindow : Form
     {
         private string _filePath;
-        private MDTransformer _transformer = new MDTransformer();
-
+        private IMarkdownProcessor _processor = new GitHubProcessor();
+        
         delegate void SetDocumentDelegate();
 
         public SourceWindow(string fileName)
@@ -36,11 +36,9 @@ namespace MutoMark.Forms
                 this.Invoke(new SetDocumentDelegate(this.SetDocument));
             }
             else
-            {
-                this.fileStatus.Text = "Loading...";
-                var doc = new Document(this.GetSource());
-                this.browser.DocumentText = doc.ToString();
-                this.fileStatus.Text = Path.GetFileName(this._filePath);
+            {                
+                var doc = new Document(this.GetSource(), this._processor);
+                this.browser.DocumentText = doc.ToString();             
             }
         }
 
@@ -70,6 +68,16 @@ namespace MutoMark.Forms
                     }
                 }
             };
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }        
     }
 }

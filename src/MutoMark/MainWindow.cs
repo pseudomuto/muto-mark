@@ -21,6 +21,8 @@ namespace MutoMark
             InitializeComponent();
             this.Visible = false;
             this.trayIcon.Visible = true;
+
+            OpenMarkdownFile("..\\..\\..\\..\\Samples\\github.md");
         }
                 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,10 +40,15 @@ namespace MutoMark
                 {
                     this._rootFolder = Path.GetDirectoryName(dlg.FileName);
 
-                    var frm = new SourceWindow(dlg.FileName);
-                    frm.Show();
+                    OpenMarkdownFile(dlg.FileName);
                 }
             }
+        }
+
+        private static void OpenMarkdownFile(string fileName)
+        {
+            var frm = new SourceWindow(fileName);
+            frm.Show();
         }
     }
 }

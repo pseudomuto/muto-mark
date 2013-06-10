@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="UnitTestHelpers">
       <HintPath>..\packages\UnitTestHelpers.1.0.1.0\lib\net45\UnitTestHelpers.dll</HintPath>
@@ -55,8 +58,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Components\WatchDogTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GitHubProcessorTests.cs" />
+    <Compile Include="Processors\GitHubProcessorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

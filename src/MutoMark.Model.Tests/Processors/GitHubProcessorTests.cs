@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UnitTestHelpers;
 
-namespace MutoMark.Model.Tests
+namespace MutoMark.Model.Tests.Processors
 {
     [TestClass]
     public class GitHubProcessorTests

@@ -68,24 +68,6 @@ namespace MutoMark.Model
         private static void FixInnerUnderscores(ref string markDown)
         {
             markDown = Regex.Replace(markDown, @"([^_])_([^_])", "$1\\_$2");
-        }
-
-        private static List<Match> GetCodeBlocks(string markDown)
-        {
-            return GetMatches(markDown, @"<pre>([\w\W\r\n\t]+)</pre>");
-        }
-
-        private static List<Match> GetMatches(string source, string pattern, RegexOptions options = RegexOptions.IgnoreCase)
-        {
-            var matches = Regex.Matches(source, pattern);
-
-            var list = new List<Match>();
-            for (int i = 0; i < matches.Count; i++)
-            {
-                list.Add(matches[i]);
-            }
-
-            return list;
         }        
     }
 }

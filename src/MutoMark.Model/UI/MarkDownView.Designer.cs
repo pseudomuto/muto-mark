@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarkDownView));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.browser = new System.Windows.Forms.WebBrowser();
             this.styleButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.defaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.browser = new System.Windows.Forms.WebBrowser();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,35 +50,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(795, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // styleButton
-            // 
-            this.styleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.styleButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.defaultToolStripMenuItem,
-            this.gitHubToolStripMenuItem});
-            this.styleButton.Image = global::MutoMark.Model.Properties.Resources.XSLTTransformfile_829;
-            this.styleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.styleButton.Name = "styleButton";
-            this.styleButton.Size = new System.Drawing.Size(29, 22);
-            this.styleButton.Text = "Display Style";
-            this.styleButton.ToolTipText = "Display Style";
-            // 
-            // defaultToolStripMenuItem
-            // 
-            this.defaultToolStripMenuItem.Name = "defaultToolStripMenuItem";
-            this.defaultToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D1)));
-            this.defaultToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.defaultToolStripMenuItem.Text = "Default";
-            this.defaultToolStripMenuItem.Click += new System.EventHandler(this.StyleSelectionChanged);
-            // 
-            // gitHubToolStripMenuItem
-            // 
-            this.gitHubToolStripMenuItem.Name = "gitHubToolStripMenuItem";
-            this.gitHubToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D2)));
-            this.gitHubToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.gitHubToolStripMenuItem.Text = "GitHub";
-            this.gitHubToolStripMenuItem.Click += new System.EventHandler(this.StyleSelectionChanged);
             // 
             // panel1
             // 
@@ -98,7 +69,37 @@
             this.browser.Name = "browser";
             this.browser.Size = new System.Drawing.Size(795, 616);
             this.browser.TabIndex = 0;
+            this.browser.TabStop = false;
             this.browser.WebBrowserShortcutsEnabled = false;
+            // 
+            // styleButton
+            // 
+            this.styleButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.styleButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.defaultToolStripMenuItem,
+            this.gitHubToolStripMenuItem});
+            this.styleButton.Image = global::MutoMark.Model.Properties.Resources.XSLTTransformfile_829;
+            this.styleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.styleButton.Name = "styleButton";
+            this.styleButton.Size = new System.Drawing.Size(102, 22);
+            this.styleButton.Text = "Display Style";
+            this.styleButton.ToolTipText = "Display Style";
+            // 
+            // defaultToolStripMenuItem
+            // 
+            this.defaultToolStripMenuItem.Name = "defaultToolStripMenuItem";
+            this.defaultToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D1)));
+            this.defaultToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.defaultToolStripMenuItem.Text = "Default";
+            this.defaultToolStripMenuItem.Click += new System.EventHandler(this.StyleSelectionChanged);
+            // 
+            // gitHubToolStripMenuItem
+            // 
+            this.gitHubToolStripMenuItem.Name = "gitHubToolStripMenuItem";
+            this.gitHubToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D2)));
+            this.gitHubToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gitHubToolStripMenuItem.Text = "GitHub";
+            this.gitHubToolStripMenuItem.Click += new System.EventHandler(this.StyleSelectionChanged);
             // 
             // MarkDownView
             // 

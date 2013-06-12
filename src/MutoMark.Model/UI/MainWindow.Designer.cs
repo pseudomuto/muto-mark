@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.trayIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.trayMenu = new MutoMark.Model.UI.TrayMenu();
+            this.trayMenu = new MutoMark.Model.TrayMenu();
             this.SuspendLayout();
             // 
             // trayIcon
@@ -67,7 +67,7 @@
         #endregion
 
         private System.Windows.Forms.NotifyIcon trayIcon;
-        private Model.UI.TrayMenu trayMenu;
+        private Model.TrayMenu trayMenu;
     }
 }
 

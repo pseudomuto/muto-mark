@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\ITrayMenuDataSource.cs" />
+    <Compile Include="Abstractions\ITrayMenuDelegate.cs" />
     <Compile Include="Components\Unsubscriber.cs" />
     <Compile Include="Components\WatchDog.cs" />
     <Compile Include="Document.cs" />

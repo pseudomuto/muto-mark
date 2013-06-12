@@ -10,7 +10,7 @@ namespace MutoMark.Model
     public class WatchDog : IObservable<Document>, IDisposable
     {
         public string FileName { get; private set; }
-        public IMarkdownProcessor Processor { get; private set; }
+        public IMarkdownProcessor Processor { get; set; }
 
         private FileSystemWatcher _watcher;
         private readonly object _syncLock = new object();

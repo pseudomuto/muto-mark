@@ -111,6 +111,7 @@ namespace MutoMark.Model
                         break;
                 }
 
+                this._watchDog.Processor = this._processor;
                 this.SetDocument();
             }
         }

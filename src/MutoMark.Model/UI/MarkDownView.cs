@@ -30,7 +30,7 @@ namespace MutoMark.Model
             this._filePath = fileName;
 
             this.SetupWatchDog(fileName);
-            this.styleButton.DropDownItems[0].PerformClick();
+            this.styleButton.DropDownItems[1].PerformClick();
         }
 
         private void SetDocument(Document source)
@@ -99,6 +99,8 @@ namespace MutoMark.Model
             var item = sender as ToolStripItem;
             if (item != null)
             {
+                this.styleButton.Text = string.Concat("Style: ", item.Text);
+
                 switch(item.Text.ToLower())
                 {
                     case "github":

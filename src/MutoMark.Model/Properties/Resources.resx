@@ -121,4 +121,10 @@
   <data name="XSLTTransformfile_829" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\XSLTTransformfile_829.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GoToSourceCode_6546" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GoToSourceCode_6546.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_6530" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_6530.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

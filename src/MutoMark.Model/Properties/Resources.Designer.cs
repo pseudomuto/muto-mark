@@ -63,6 +63,26 @@ namespace MutoMark.Model.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GoToSourceCode_6546 {
+            get {
+                object obj = ResourceManager.GetObject("GoToSourceCode_6546", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save_6530 {
+            get {
+                object obj = ResourceManager.GetObject("Save_6530", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap XSLTTransformfile_829 {
             get {
                 object obj = ResourceManager.GetObject("XSLTTransformfile_829", resourceCulture);

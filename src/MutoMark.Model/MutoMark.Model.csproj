@@ -76,6 +76,12 @@
     <Compile Include="UI\Forms\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Forms\SourceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\SourceWindow.Designer.cs">
+      <DependentUpon>SourceWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ResultView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\ResultWindow.resx">
       <DependentUpon>ResultWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\SourceWindow.resx">
+      <DependentUpon>SourceWindow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -32,6 +32,8 @@ namespace MutoMark.Model
 
 #if DEBUG
             this.OpenFile(@"..\..\..\..\Samples\github.md");
+#else
+            this.Open();
 #endif
         }
 

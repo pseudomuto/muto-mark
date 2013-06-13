@@ -18,7 +18,7 @@ namespace MutoMark.Model.Tests.UI
                 .Returns("<p>Original HTML</p>")
                 .Verifiable();
 
-            this._subject = new ResultView(this._dataSourceMock.Object);
+            this._subject = new MockResultView(this._dataSourceMock.Object);
         }
 
         [TestMethod]
@@ -41,6 +41,19 @@ namespace MutoMark.Model.Tests.UI
 
             Assert.AreEqual("<p>New Text</p>", this._subject.HTML);
             mock.Verify();
+        }
+    }
+
+    class MockResultView : ResultView
+    {
+        public MockResultView(IResultViewDataSource ds)
+            : base(ds)
+        {
+        }
+
+        protected override void SetDocumentText()
+        {
+            // don't use the browser control...
         }
     }
 }

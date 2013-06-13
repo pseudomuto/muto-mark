@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,7 +11,7 @@ namespace MutoMark.Model
     public class ResultView : Panel
     {
         private WebBrowser _browser;
-
+        
         public IResultViewDataSource DataSource { get; set; }
 
         public string HTML { get; private set; }
@@ -35,7 +36,7 @@ namespace MutoMark.Model
                 this.DestroyBrowser();
                 this.CreateBrowser();
                 this.HTML = this.DataSource.HTMLForResultView(this);
-                this._browser.DocumentText = this.HTML;
+                this.SetDocumentText();
                 
                 this.Controls.Add(this._browser);
             }
@@ -43,12 +44,17 @@ namespace MutoMark.Model
             this.ResumeLayout(true);
         }
 
+        protected virtual void SetDocumentText()
+        {
+            this._browser.DocumentText = this.HTML;
+        }
+
         private void DestroyBrowser()
         {
             if (this._browser != null)
             {
-                this.Controls.Remove(this._browser);
-                //this._browser.Dispose();
+                this.Controls.Remove(this._browser);                
+                this._browser.Dispose();
                 this._browser = null;
             }
         }

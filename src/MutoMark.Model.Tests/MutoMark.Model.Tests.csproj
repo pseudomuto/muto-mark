@@ -27,6 +27,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -64,7 +65,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Processors\GitHubProcessorTests.cs" />
     <Compile Include="UI\TrayMenuTests.cs" />
-    <Compile Include="UI\ResultViewTests.cs" />
+    <Compile Include="UI\ResultViewTests.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\EditorToolStripTests.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,7 +10,7 @@ A Mark Down Viewer for Windows
 ## Installation
 
 * Clone the repo and tun the installer found in the `dist` folder
-* Alternatively you can use the [direct link](https://github.com/davidmuto/muto-mark/blob/master/dist/MutoMarkInstaller.exe?raw=true "Download MutoMark!")
+* Alternatively you can use the [direct link](/davidmuto/muto-mark/blob/master/dist/MutoMarkInstaller.exe?raw=true "Download MutoMark!")
 
 ## Usage
 
@@ -19,7 +19,7 @@ A Mark Down Viewer for Windows
 * Using your favorite editor, make changes to the markdown
 * Watch the results change in real time
 
-![MutoMark Screenshot](samples/screenshot.png)
+![MutoMark Screenshot](/davidmuto/muto-mark/samples/screenshot.png)
 
 
 You can open multiple documents using the Tray Icon (typically bottom right) or from the toolbar of an open window

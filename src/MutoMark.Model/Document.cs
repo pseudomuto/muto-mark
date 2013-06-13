@@ -15,12 +15,16 @@ namespace MutoMark.Model
         
         public string MarkDownSource { get; private set; }
 
+        public string HTMLResult { get; private set; }
+
         public IMarkdownProcessor Processor { get { return this._transformer.Processor; } }
 
         public Document(string markDown, IMarkdownProcessor processor)
         {
             this.MarkDownSource = markDown;
+            
             this._transformer = new MDTransformer(processor);
+            this.HTMLResult = this._transformer.Transform(markDown);
         }
 
         public override string ToString()
@@ -31,7 +35,7 @@ namespace MutoMark.Model
             sb.Append("</head><body>");
 
             var template = this.GetTemplate(this.Processor.TemplateName);
-            var html = template.Replace("##BODY##", this._transformer.Transform(this.MarkDownSource));
+            var html = template.Replace("##BODY##", this.HTMLResult);
                         
             return sb.Append(html).Append("</body></html>").Replace("\r", "\r\n").ToString();
         }

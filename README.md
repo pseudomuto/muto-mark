@@ -9,7 +9,8 @@ A Mark Down Viewer for Windows
 
 ## Installation
 
-* Download the installer from the `dist` folder
+* Clone the repo and tun the installer found in the `dist` folder
+* Alternatively you can use the [direct link](https://github.com/davidmuto/muto-mark/blob/master/dist/MutoMarkInstaller.exe?raw=true "Download MutoMark!")
 
 ## Usage
 

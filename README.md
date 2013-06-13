@@ -9,7 +9,7 @@ A Mark Down Viewer for Windows
 
 ## Installation
 
-* Clone the repo and tun the installer found in the `dist` folder
+* Clone the repo and run the installer found in the `dist` folder
 * Alternatively you can use the [direct link](https://github.com/davidmuto/muto-mark/blob/master/dist/MutoMarkInstaller.exe?raw=true "Download MutoMark!")
 
 ## Usage
@@ -23,3 +23,12 @@ A Mark Down Viewer for Windows
 
 
 You can open multiple documents using the Tray Icon (typically bottom right) or from the toolbar of an open window
+
+## Contributing
+
+* Fork the repo and make a pull request!
+
+### Notes for Contributors
+
+* In order to generate the installer (optional) you will need [Inno Setup](http://www.jrsoftware.org/isinfo.php, "Inno Setup")
+* Installer is recreated on every release build (via post-build event and custom scripts)

@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MutoMark.Model.UI;
+using MutoMark.Model;
 using Moq;
 using System.Windows.Forms;
 using System.Linq;

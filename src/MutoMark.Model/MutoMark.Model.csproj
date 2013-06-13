@@ -49,8 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstractions\ITrayMenuDataSource.cs" />
-    <Compile Include="Abstractions\ITrayMenuDelegate.cs" />
+    <Compile Include="Abstractions\EditorToolStrip\IEditorToolStripDataSource.cs" />
+    <Compile Include="Abstractions\EditorToolStrip\IEditorToolStripDelegate.cs" />
+    <Compile Include="Abstractions\ResultView\IResultViewDataSource.cs" />
+    <Compile Include="Abstractions\TrayMenu\ITrayMenuDataSource.cs" />
+    <Compile Include="Abstractions\TrayMenu\ITrayMenuDelegate.cs" />
     <Compile Include="Components\Unsubscriber.cs" />
     <Compile Include="Components\WatchDog.cs" />
     <Compile Include="Document.cs" />
@@ -64,17 +67,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UI\MainWindow.cs">
+    <Compile Include="UI\EditorToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\MainWindow.Designer.cs">
+    <Compile Include="UI\Forms\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\MarkDownView.cs">
+    <Compile Include="UI\ResultView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\ResultWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\MarkDownView.Designer.cs">
-      <DependentUpon>MarkDownView.cs</DependentUpon>
+    <Compile Include="UI\Forms\ResultWindow.Designer.cs">
+      <DependentUpon>ResultWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\TrayMenu.cs">
       <SubType>Component</SubType>
@@ -86,14 +95,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\github\style.css" />
-    <EmbeddedResource Include="UI\MainWindow.resx">
+    <EmbeddedResource Include="UI\Forms\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\MarkDownView.resx">
-      <DependentUpon>MarkDownView.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Forms\ResultWindow.resx">
+      <DependentUpon>ResultWindow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -109,13 +119,16 @@
     <EmbeddedResource Include="Resources\default\style.css" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\XSLTTransformfile_829.ico" />
+    <EmbeddedResource Include="Resources\style.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\GoToSourceCode_6546.ico" />
+    <EmbeddedResource Include="Resources\source.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Save_6530.ico" />
+    <EmbeddedResource Include="Resources\save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\file.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -38,26 +38,32 @@ namespace MutoMark.Model
         private void StartMonitoring()
         {
             this._watcher = new FileSystemWatcher(Path.GetDirectoryName(this.FileName), Path.GetFileName(this.FileName));
-            
+            this._watcher.NotifyFilter = NotifyFilters.LastWrite;
+
             this._watcher.Changed += (o, e) =>
             {
                 if (e.ChangeType == WatcherChangeTypes.Changed)
                 {
-                    lock (this._syncLock)
-                    {
-                        // notify
-                        var source = this.GetSource();
-                        var doc = new Document(source, this.Processor);
-
-                        foreach (var listener in this._observers)
-                        {                            
-                            listener.OnNext(doc);
-                        }
-                    }
+                    this.Notify();
                 }
             };
 
             this._watcher.EnableRaisingEvents = true;
+        }
+
+        public void Notify()
+        {
+            lock (this._syncLock)
+            {
+                // notify
+                var source = this.GetSource();
+                var doc = new Document(source, this.Processor);
+
+                foreach (var listener in this._observers)
+                {
+                    listener.OnNext(doc);
+                }
+            }
         }
 
         private string GetSource()

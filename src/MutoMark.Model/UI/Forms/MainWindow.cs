@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MutoMark.Model.UI
+namespace MutoMark.Model
 {
     public partial class MainWindow : Form, ITrayMenuDataSource, ITrayMenuDelegate
     {
@@ -29,6 +29,10 @@ namespace MutoMark.Model.UI
             this.trayMenu.DataSource = this;
             this.trayMenu.Delegate = this;
             this.trayMenu.ReloadData();
+
+#if DEBUG
+            this.OpenFile(@"..\..\..\..\Samples\github.md");
+#endif
         }
 
         public int NumberOfToolStripItems(TrayMenu instance)
@@ -54,7 +58,7 @@ namespace MutoMark.Model.UI
             }
         }
 
-        private void Open()
+        public void Open()
         {
             using (var dlg = new OpenFileDialog())
             {
@@ -70,7 +74,7 @@ namespace MutoMark.Model.UI
 
         private void OpenFile(string filePath)
         {
-            new MarkDownView(filePath).Show();
+            new ResultWindow(filePath).Show(this);
         }
     }
 }

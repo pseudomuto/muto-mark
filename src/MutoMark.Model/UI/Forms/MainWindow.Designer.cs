@@ -1,4 +1,4 @@
-﻿namespace MutoMark.Model.UI
+﻿namespace MutoMark.Model
 {
     partial class MainWindow
     {

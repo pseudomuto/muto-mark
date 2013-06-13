@@ -18,4 +18,4 @@ A Mark Down Viewer for Windows
 * Using your favorite editor, make changes to the markdown
 * Watch the results change in real time
 
-You can open multiple documents using the Tray Icon (typically bottom right)
+You can open multiple documents using the Tray Icon (typically bottom right) or from the toolbar of an open window

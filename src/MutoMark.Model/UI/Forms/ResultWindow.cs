@@ -105,6 +105,12 @@ namespace MutoMark.Model
                 case "Open File...":
                     (this.Owner as MainWindow).Open();
                     break;
+                case "View HTML...":
+                    using (var frm = new SourceWindow(this._renderedDocument.HTMLResult))
+                    {
+                        frm.ShowDialog(this);
+                    }
+                    break;
                 case "Default":
                 case "GitHub":
                     // TODO: Delegate this to a factory or something...
@@ -137,9 +143,9 @@ namespace MutoMark.Model
             styleButton.DropDownItems.Add(MakeStyleItem("GitHub", Keys.Alt | Keys.D2));
 
             var saveButton = new ToolStripMenuItem();
-            saveButton.ImageKey = "save";
+            saveButton.ImageKey = "source";
             saveButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            saveButton.Text = saveButton.ToolTipText = "Save HTML...";
+            saveButton.Text = saveButton.ToolTipText = "View HTML...";
 
             var openButton = new ToolStripMenuItem();
             openButton.ImageKey = "file";
@@ -148,7 +154,8 @@ namespace MutoMark.Model
             
             this._editorItems = new ToolStripItem[] {
                 styleButton,
-                openButton
+                openButton,
+                saveButton
             };
         }
 

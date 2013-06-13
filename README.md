@@ -19,7 +19,7 @@ A Mark Down Viewer for Windows
 * Using your favorite editor, make changes to the markdown
 * Watch the results change in real time
 
-![MutoMark Screenshot](https://github.com/davidmuto/muto-mark/blob/master/samples/screenshot.png)
+![MutoMark Screenshot](https://github.com/davidmuto/muto-mark/blob/master/samples/screenshot.png?raw=true)
 
 
 You can open multiple documents using the Tray Icon (typically bottom right) or from the toolbar of an open window

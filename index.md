@@ -30,7 +30,7 @@ tagline: A Markdown Viewer for Windows
       a Markdown viewer that allowed me to use my edtior of choice...but I couldn't.
     </p>
     <p>
-      If you are on a MAC, <a href-"http://markedapp.com/">Marked</a> is an amazing tool. My goal was to make a similar experience (hopefully comparable) 
+      If you are on a MAC, <a href="http://markedapp.com/">Marked</a> is an amazing tool. My goal was to make a similar experience (hopefully comparable) 
       for Windows users (like me at work).
     </p>
   </span>

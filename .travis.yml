@@ -4,4 +4,5 @@ install:
   - sudo apt-get install mono-devel mono-gmcs
 
 script:
-  - xbuild src/Muto\ Mark.sln
+  - cd src
+  - xbuild Muto\ Mark.sln

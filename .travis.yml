@@ -4,6 +4,7 @@ before_install:
   - sudo apt-get update -qq > /dev/null
   - sudo apt-get install -qq mono-devel mono-gmcs > /dev/null
   - mozroots --import --sync
+  - mkdir -p src/packages
 
 env:
   - EnableNuGetPackageRestore=true

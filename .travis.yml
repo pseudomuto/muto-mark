@@ -7,3 +7,6 @@ before_install:
 
 env:
   - EnableNuGetPackageRestore=true
+
+script:
+  - xbuild src/Muto\ Mark.sln

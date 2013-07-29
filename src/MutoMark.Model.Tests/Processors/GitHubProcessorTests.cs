@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using UnitTestHelpers;
 
 namespace MutoMark.Model.Tests.Processors
 {

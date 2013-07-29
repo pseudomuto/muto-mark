@@ -9,4 +9,4 @@ env:
   - EnableNuGetPackageRestore=true
 
 script:
-  - xbuild src/Muto\ Mark.sln
+  - xbuild src/MutoMark.Model.Tests/MutoMark.Model.Tests.csproj

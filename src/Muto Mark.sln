@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutoMark.Model", "MutoMark.Model\MutoMark.Model.csproj", "{09BFF177-0DB2-46F7-A2C9-908B02E5ABB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutoMark.Model.Tests", "MutoMark.Model.Tests\MutoMark.Model.Tests.csproj", "{15C3D6F2-36BB-4A3A-BB3A-F72F20D8156A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutoMark", "MutoMark\MutoMark.csproj", "{41612D7D-195A-42ED-ACA3-78ED78C42E03}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5BB3A2B9-D05B-4FFD-AE36-8DCE49DE1418}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutoMark.Model.Test", "MutoMark.Model.Test\MutoMark.Model.Test.csproj", "{BF372C80-A67C-4D6E-8154-643CFDFBEBCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6AE6C59F-7334-451D-A384-C6EB9B5EDADC}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutoMark", "MutoMark\MutoMark.csproj", "{41612D7D-195A-42ED-ACA3-78ED78C42E03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,12 +24,14 @@ Global
 		{09BFF177-0DB2-46F7-A2C9-908B02E5ABB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09BFF177-0DB2-46F7-A2C9-908B02E5ABB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09BFF177-0DB2-46F7-A2C9-908B02E5ABB1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{15C3D6F2-36BB-4A3A-BB3A-F72F20D8156A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15C3D6F2-36BB-4A3A-BB3A-F72F20D8156A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41612D7D-195A-42ED-ACA3-78ED78C42E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{41612D7D-195A-42ED-ACA3-78ED78C42E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41612D7D-195A-42ED-ACA3-78ED78C42E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41612D7D-195A-42ED-ACA3-78ED78C42E03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF372C80-A67C-4D6E-8154-643CFDFBEBCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF372C80-A67C-4D6E-8154-643CFDFBEBCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF372C80-A67C-4D6E-8154-643CFDFBEBCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF372C80-A67C-4D6E-8154-643CFDFBEBCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

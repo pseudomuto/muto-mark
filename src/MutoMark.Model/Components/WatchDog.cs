@@ -16,7 +16,7 @@ namespace MutoMark.Model
         private readonly object _syncLock = new object();
         private IList<IObserver<Document>> _observers = new List<IObserver<Document>>();
 
-        public WatchDog(string fileName, IMarkdownProcessor processor)
+        public WatchDog(string fileName, IMarkdownProcessor processor = null)
         {
             // null or default...
             this.Processor = processor ?? new DefaultProcessor();

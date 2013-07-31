@@ -5,13 +5,13 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace MutoMark.Model.Tests
+namespace MutoMark.Model.Test
 {
     static class ResourceLoader
     {
         public static string GetResourceString(string resName)
         {
-            var name = string.Format("MutoMark.Model.Tests.{0}", resName);
+            var name = string.Format("MutoMark.Model.Test.{0}", resName);
             var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(name);
 
             try

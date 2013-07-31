@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MutoMark.Model.Tests")]
+[assembly: AssemblyTitle("MutoMark.Model.Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MutoMark.Model.Tests")]
+[assembly: AssemblyProduct("MutoMark.Model.Test")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a0604e2d-441a-4ce6-83b8-b15f74300603")]
+[assembly: Guid("e65a0b7f-5a9b-4e09-890c-73711f8810e7")]
 
 // Version information for an assembly consists of the following four values:
 //

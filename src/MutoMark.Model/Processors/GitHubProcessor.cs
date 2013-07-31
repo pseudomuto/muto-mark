@@ -51,8 +51,8 @@ namespace MutoMark.Model
         {
             markDown = Regex.Replace(
                     markDown,
-                    @"\s([\w\/]+)?#(\d+)\b",
-                    "<a href=\"/issues/$2\" class=\"issue-link\">$1#$2</a>"
+                    @"(\b|^)?([\w\/]+)?#(\d+)\b",
+                    "<a href=\"/issues/$3\" class=\"issue-link\">$2#$3</a>"
                 );            
         }
 
@@ -60,14 +60,14 @@ namespace MutoMark.Model
         {
             markDown = Regex.Replace(
                     markDown, 
-                    @"\s([\w\/]+\@)?([\w\d]{7})([\w\d]{33})\b", 
+                    @"\b([\w\/]+\@)?([\w\d]{7})([\w\d]{33})\b", 
                     "<a href=\"/commit/$2$3\" class=\"commit-link\">$1<tt>$2</tt></a>"
                 );
         }
 
         private static void FixInnerUnderscores(ref string markDown)
         {
-            markDown = Regex.Replace(markDown, @"([^_])_([^_])", "$1\\_$2");
+            markDown = Regex.Replace(markDown, @"([^_])_([^_\b\s])", "$1\\_$2");
         }        
     }
 }

@@ -3,7 +3,8 @@ language: c
 before_install:
   - sudo apt-get update -qq > /dev/null
   - sudo apt-get install -qq mono-devel mono-gmcs > /dev/null
-  - mozroots --import --sync  
+  - mozroots --import --sync
+  - mv -f src/.nuget/NuGet.targets-mono src/.nuget/NuGet.targets
 
 env:
   - EnableNuGetPackageRestore=true

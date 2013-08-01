@@ -6,10 +6,8 @@ before_install:
   - mozroots --import --sync
   - mv -f src/.nuget/NuGet.targets-mono src/.nuget/NuGet.targets
   - chmod +x lib/xunit/xunit.console.clr4.x86.exe
-
-env:
-  - EnableNuGetPackageRestore=true
-  - DISPLAY=99.0
+  - export EnableNuGetPackageRestore=true
+  - export DISPLAY=99.0
 
 script:
   - cd src/

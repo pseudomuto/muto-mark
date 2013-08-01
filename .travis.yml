@@ -13,4 +13,4 @@ env:
 script:
   - cd src/
   - xbuild Muto\ Mark.sln
-  - mono lib/xunit/xunit.console.clr4.x86.exe src/MutoMark.Model.Test/bin/Debug/MutoMark.Model.Test.dll
+  - mono ../lib/xunit/xunit.console.clr4.x86.exe MutoMark.Model.Test/bin/Debug/MutoMark.Model.Test.dll

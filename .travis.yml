@@ -9,6 +9,7 @@ before_install:
 
 env:
   - EnableNuGetPackageRestore=true
+  - DISPLAY=99.0
 
 script:
   - cd src/

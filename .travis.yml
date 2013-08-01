@@ -5,6 +5,7 @@ before_install:
   - sudo apt-get install -qq mono-devel mono-gmcs > /dev/null
   - mozroots --import --sync
   - mv -f src/.nuget/NuGet.targets-mono src/.nuget/NuGet.targets
+  - chmod +x lib/xunit/xunit.console.clr4.x86.exe
 
 env:
   - EnableNuGetPackageRestore=true
@@ -12,4 +13,4 @@ env:
 script:
   - cd src/
   - xbuild Muto\ Mark.sln
-  - mono lib/xunit/xunit.console.clr4.exe src/MutoMark.Model.Test/bin/Debug/MutoMark.Model.Test.dll
+  - mono lib/xunit/xunit.console.clr4.x86.exe src/MutoMark.Model.Test/bin/Debug/MutoMark.Model.Test.dll

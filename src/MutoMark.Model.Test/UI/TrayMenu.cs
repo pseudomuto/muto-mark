@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Xunit;
 
+using Should.Fluent;
+
 namespace MutoMark.Model.Test.UI
 {
     public abstract class TrayMenu : IDisposable
@@ -47,7 +49,7 @@ namespace MutoMark.Model.Test.UI
             [Fact]
             public void LoadsCorrectNumberOfRecords()
             {
-                Assert.Equal(2, this._subject.Items.Count);
+                this._subject.Items.Count.Should().Equal(2);
             }
 
             [Fact]
@@ -57,10 +59,8 @@ namespace MutoMark.Model.Test.UI
 
                 for (int i = 0; i < expected.Length; i++)
                 {
-                    Assert.Equal(
-                            expected[i],
-                            this._subject.Items[i].Text
-                        );
+                    expected[i].Should()
+                        .Equal(this._subject.Items[i].Text);
                 }
             }
         }

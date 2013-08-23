@@ -8,6 +8,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
+using Should.Fluent;
+
 namespace MutoMark.Model.Test.Components
 {
     public class WatchDog
@@ -39,7 +41,7 @@ namespace MutoMark.Model.Test.Components
             public void ExpandsFilePath()
             {
                 var expected = Path.GetFullPath(this.FileName);
-                Assert.Equal(expected, this._subject.FileName);
+                expected.Should().Equal(this._subject.FileName);
             }
 
             [Fact]

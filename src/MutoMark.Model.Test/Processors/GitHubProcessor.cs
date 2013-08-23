@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
+using Should.Fluent;
+
 namespace MutoMark.Model.Test.Processors
 {
     public class GitHubProcessor
@@ -20,85 +22,82 @@ namespace MutoMark.Model.Test.Processors
             [Fact]
             public void EscapesUnderscoresInWords()
             {
-                Assert.Contains(
-                        "perform_complicated_task or do_this_and_do_that_and_another_thing", 
-                        this._subject
+                this._subject.Should()
+                    .Contain(
+                        "perform_complicated_task or do_this_and_do_that_and_another_thing"
                     );
             }
 
             [Fact]
             public void EscapesUnderscoresInPreTags()
             {
-                Assert.Contains("def robot_invasion", this._subject);
+                this._subject.Should()
+                    .Contain("def robot_invasion");
             }
 
             [Fact]
             public void NewLinesAreTreatedAsLineBreaks()
             {
-                Assert.Contains("<p>Roses are red<br />\nViolets are blue</p>", this._subject);
+                this._subject.Should()
+                    .Contain("<p>Roses are red<br />\nViolets are blue</p>");
             }
 
             [Fact]
             public void NewLinesWithTwoSpacesAreNewParagraphs()
             {
-                Assert.Contains(
-                    "<p>Roses are red</p>\n\n<p>\nViolets are blue</p>",
-                    this._subject
-                );
+                this._subject.Should()
+                    .Contain("<p>Roses are red</p>\n\n<p>\nViolets are blue</p>");                
             }
 
             [Fact]
             public void CommitHashesAreAutoLinked()
             {
-                Assert.Contains(
-                    "<a href=\"/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2\" class=\"commit-link\"><tt>be6a8cc</tt></a>",
-                    this._subject
-                );
+                this._subject.Should()
+                    .Contain(
+                        "<a href=\"/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2\" " +
+                        "class=\"commit-link\"><tt>be6a8cc</tt></a>"
+                    );
             }
 
             [Fact]
             public void CommitHashesAreAutoLinkedWithUser()
             {
-                Assert.Contains(
-                    "<a href=\"/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2\" class=\"commit-link\">mojombo@<tt>be6a8cc</tt></a>",
-                    this._subject
-                );
+                this._subject.Should()
+                    .Contain(
+                        "<a href=\"/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2\" "+
+                        "class=\"commit-link\">mojombo@<tt>be6a8cc</tt></a>"
+                    );
             }
 
             [Fact]
             public void CommitHashesAreAutoLinkedWithUserAndProject()
             {
-                Assert.Contains(
-                    "<a href=\"/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2\" class=\"commit-link\">mojombo/god@<tt>be6a8cc</tt></a>",
-                    this._subject
-                );
+                this._subject.Should()
+                    .Contain(
+                        "<a href=\"/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2\" "+
+                        "class=\"commit-link\">mojombo/god@<tt>be6a8cc</tt></a>"
+                    );
             }
 
             [Fact]
             public void IssuesAreAutoLinked()
             {
-                Assert.Contains(
-                        "<a href=\"/issues/1\" class=\"issue-link\">#1</a>", 
-                        this._subject
-                    );
+                this._subject.Should()
+                    .Contain("<a href=\"/issues/1\" class=\"issue-link\">#1</a>");
             }
 
             [Fact]
             public void IssuesAreAutoLinkedWithUser()
             {
-                Assert.Contains(
-                        "<a href=\"/issues/1\" class=\"issue-link\">mojombo#1</a>",
-                        this._subject
-                    );
+                this._subject.Should()
+                    .Contain("<a href=\"/issues/1\" class=\"issue-link\">mojombo#1</a>");
             }
 
             [Fact]
             public void IssuesAreAutoLinkedWithUserAndProject()
             {
-                Assert.Contains(
-                        "<a href=\"/issues/1\" class=\"issue-link\">mojombo/god#1</a>",
-                        this._subject
-                    );
+                this._subject.Should()
+                    .Contain("<a href=\"/issues/1\" class=\"issue-link\">mojombo/god#1</a>");
             }
         }
 
@@ -112,13 +111,15 @@ namespace MutoMark.Model.Test.Processors
             [Fact]
             public void DefinesStylesheetName()
             {
-                Assert.Equal("github.style", this._subject.StylesheetName);
+                this._subject.StylesheetName.Should()
+                    .Equal("github.style");
             }
 
             [Fact]
             public void DefinesTemplateName()
             {
-                Assert.Equal("github.template", this._subject.TemplateName);
+                this._subject.TemplateName.Should()
+                    .Equal("github.template");
             }
         }
 
@@ -129,19 +130,19 @@ namespace MutoMark.Model.Test.Processors
             [Fact]
             public void SetsAutoHyperlinkToTrue()
             {
-                Assert.True(this._subject.AutoHyperlink);
+                this._subject.AutoHyperlink.Should().Be.True();
             }
 
             [Fact]
             public void SetsAutoNewLinesToTrue()
             {
-                Assert.True(this._subject.AutoNewLines);
+                this._subject.AutoNewLines.Should().Be.True();
             }
 
             [Fact]
             public void SetsLinkEmailsToTrue()
             {
-                Assert.True(this._subject.LinkEmails);
+                this._subject.LinkEmails.Should().Be.True();
             }
         }
 
@@ -150,7 +151,7 @@ namespace MutoMark.Model.Test.Processors
             protected void CompareResult(string expected, string source)
             {
                 this._subject.PreProcess(ref source);
-                Assert.Equal(expected, source);
+                expected.Should().Equal(source);
             }
 
             public class Underscores : PreProcess

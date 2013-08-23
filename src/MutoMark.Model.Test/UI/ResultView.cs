@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
+using Should.Fluent;
+
 namespace MutoMark.Model.Test.UI
 {
     public abstract class ResultView : IDisposable
@@ -33,7 +35,9 @@ namespace MutoMark.Model.Test.UI
             [Fact]
             public void InitiallyShowsModelFromDataSource()
             {
-                Assert.Equal("<p>Original HTML</p>", this._subject.HTML);
+                this._subject.HTML.Should()
+                    .Equal("<p>Original HTML</p>");
+
                 this._dataSourceMock.Verify();
             }
 
@@ -48,7 +52,9 @@ namespace MutoMark.Model.Test.UI
                 this._subject.DataSource = mock.Object;
                 this._subject.Reload();
 
-                Assert.Equal("<p>New Text</p>", this._subject.HTML);
+                this._subject.HTML.Should()
+                    .Equal("<p>New Text</p>");
+
                 mock.Verify();
             }
         }

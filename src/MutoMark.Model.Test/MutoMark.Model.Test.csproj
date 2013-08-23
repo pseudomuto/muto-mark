@@ -57,6 +57,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Components\WatchDog.cs" />
     <Compile Include="Processors\GitHubProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

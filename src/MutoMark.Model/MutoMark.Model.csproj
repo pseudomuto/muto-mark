@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Abstractions\EditorToolStrip\IEditorToolStripDataSource.cs" />
     <Compile Include="Abstractions\EditorToolStrip\IEditorToolStripDelegate.cs" />
     <Compile Include="Abstractions\ResultView\IResultViewDataSource.cs" />

@@ -7,7 +7,7 @@ before_install:
   - mv -f src/.nuget/NuGet.targets-mono src/.nuget/NuGet.targets
   - chmod +x lib/xunit/xunit.console.clr4.x86.exe
   - export EnableNuGetPackageRestore=true
-  - export DISPLAY=:0
+  - export DISPLAY=1001:0
 
 script:
   - cd src/

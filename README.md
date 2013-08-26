@@ -1,4 +1,4 @@
-# Muto Mark! - Pre Beta [![Build Status](https://travis-ci.org/pseudomuto/muto-mark.png)](https://travis-ci.org/pseudomuto/muto-mark)
+# Muto Mark! - Pre Beta 
 
 A Mark Down Viewer for Windows
 

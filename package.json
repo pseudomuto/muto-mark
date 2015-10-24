@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "MutoMark",
+  "version": "2.0.0",
+  "main": ".run/main.js",
+  "repository": "https://github.com/pseudomuto/muto-mark",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp run"
+  },
+  "devDependencies": {
+    "del": "^2.0.2",
+    "electron-connect": "^0.3.3",
+    "electron-prebuilt": "^0.34.1",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.3.0",
+    "gulp-load-plugins": "^1.0.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-watch": "^4.3.5"
+  }
+}

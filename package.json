@@ -6,7 +6,7 @@
   "repository": "https://github.com/pseudomuto/muto-mark",
   "license": "MIT",
   "scripts": {
-    "start": "gulp run"
+    "start": "gulp"
   },
   "devDependencies": {
     "del": "^2.0.2",

@@ -1,0 +1,17 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": [2, "global"],
+    "indent": [2, 2, { "SwitchCase": 1 }],
+    "quotes": [2, "double"],
+    "semi": [2, "always"],
+    "object-shorthand": [2, "always"],
+    "no-console": 1,
+    "no-unused-vars": [2, { "vars": "all" }]
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  }
+}

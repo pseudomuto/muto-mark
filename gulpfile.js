@@ -23,7 +23,8 @@ var Sources = {
 };
 
 // load custom tasks
-gulp.task("test", task("test"));
+gulp.task("lint", task("lint", { paths: [srcPath(Sources.scripts)] }));
+gulp.task("test", ["lint"], task("test"));
 gulp.task("clean", task("clean", { delFn: del, targets: [RUN_DIR] }));
 gulp.task("scss:watch", watchTask("scss-watch", srcPath(Sources.styles), runPath("/style")));
 gulp.task("scripts:watch", watchTask("scripts-watch", srcPath(Sources.scripts), RUN_DIR));

@@ -6,7 +6,7 @@ module.exports = function(gulp, plugins, options) {
     gulp.src(watch)
       .pipe(plugins.watch(watch, { verbose: true }))
       .pipe(plugins.plumber())
-      .pipe(plugins.babel({ stage: 0 }))
+      .pipe(plugins.babel({ stage: 2 }))
       .pipe(gulp.dest(target));
 
     done();

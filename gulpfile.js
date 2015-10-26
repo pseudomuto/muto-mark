@@ -7,7 +7,7 @@ var del            = require("del");
 var ElectronServer = require("electron-connect").server;
 
 var RUN_DIR  = ".run";
-var SRC_DIR  = "src";
+var SRC_DIR  = "app";
 
 var runPath   = function(path) { return RUN_DIR + path; }
 var srcPath   = function(path) { return SRC_DIR + path; }

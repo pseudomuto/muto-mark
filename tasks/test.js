@@ -4,9 +4,11 @@ var testSettings = {
   require:   ["./test/helper.js"]
 };
 
-module.exports = function(gulp, plugins) {
+module.exports = function(gulp, plugins, options) {
+  var glob = options.glob;
+
   return function() {
-    return gulp.src("test/**/*_test.js")
+    return gulp.src(glob)
       .pipe(plugins.mocha(testSettings));
   };
 };

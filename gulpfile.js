@@ -16,13 +16,13 @@ var watchTask = function(file, watch, target) { return task(file, { watch: watch
 
 var Sources = {
   scripts:  "/**/*.js",
-  styles:   "/assets/css/**/*.{scss,css}",
+  styles:   "/style/**/*.{scss,css}",
   views:    "/views/**/*.html"
 };
 
 // load custom tasks
 gulp.task("clean", task("clean", { delFn: del, targets: [RUN_DIR] }));
-gulp.task("scss:watch", watchTask("scss-watch", srcPath(Sources.styles), runPath("/assets/css")));
+gulp.task("scss:watch", watchTask("scss-watch", srcPath(Sources.styles), runPath("/style")));
 gulp.task("scripts:watch", watchTask("scripts-watch", srcPath(Sources.scripts), RUN_DIR));
 gulp.task("views:watch", watchTask("copy-watch", srcPath(Sources.views), runPath("/views")));
 

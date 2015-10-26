@@ -1,8 +1,9 @@
 "use strict";
 
+import Menus from "utils/menus";
+
 suite("utils/menus", () => {
   test("assets the truth", () => {
-    sinon.useFakeTimers();
-    assert.isTrue(true);
+    assert.isTrue(new Menus().prop);
   });
 });

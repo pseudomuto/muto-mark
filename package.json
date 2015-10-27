@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "gulp",
-    "test": "NODE_PATH=./app gulp test"
+    "test": "NODE_PATH=./app gulp test",
+    "watch": "NODE_PATH=./app gulp test -w"
   },
   "devDependencies": {
     "babel": "^5.8.29",

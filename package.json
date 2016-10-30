@@ -1,0 +1,32 @@
+{
+  "name": "muto-mark",
+  "version": "2.0.0",
+  "author": "David Muto (pseudomuto) <david.muto@gmail.com>",
+  "license": "MIT",
+  "description": "A cross-platform markdown viewer",
+  "main": "lib/main.js",
+  "repository": {
+    "url": "https://github.com/pseudomuto/muto-mark",
+    "type": "git"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "3.1.2",
+    "standard": "8.4.0"
+  },
+  "scripts": {
+    "test": "standard && mocha spec --recursive --require ./spec/helper.js"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "expect",
+      "it"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "mocha": true
+    }
+  }
+}

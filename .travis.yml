@@ -1,17 +1,16 @@
-language: c
+language: node_js
+node_js:
+  - "6"
 
 before_install:
-  - sudo apt-get update -qq > /dev/null
-  - sudo apt-get install -qq mono-devel mono-gmcs > /dev/null
-  - mozroots --import --sync
-  - mv -f src/.nuget/NuGet.targets-mono src/.nuget/NuGet.targets
-  - chmod +x lib/xunit/xunit.console.clr4.x86.exe
-  - export EnableNuGetPackageRestore=true
-  - echo $DISPLAY
-  - export DISPLAY=unix:0.0
+  - sudo apt-key adv --keyserver pgp.mit.edu --recv D101F7899D41F3C3
+  - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  - sudo apt-get update -qq
+  - sudo apt-get install -y -qq yarn
 
-script:
-  - cd src/
-  - echo $DISPLAY
-  - xbuild Muto\ Mark.sln
-  - mono ../lib/xunit/xunit.console.clr4.x86.exe MutoMark.Model.Test/bin/Debug/MutoMark.Model.Test.dll
+cache:
+  directories:
+    - $HOME/.yarn-cache
+
+install: yarn install
+script: yarn test

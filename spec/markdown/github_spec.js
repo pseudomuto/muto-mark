@@ -1,6 +1,6 @@
 'use strict'
 
-const github = require('../../lib/markdown/github')
+const github = require('app/markdown/github')
 
 describe('Github Markdown Processing', () => {
   context('#hubify', () => {

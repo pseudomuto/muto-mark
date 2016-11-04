@@ -4,8 +4,8 @@ const path = require('path')
 let mainWindow = null
 
 app.on('ready', () => {
-  mainWindow = new BrowserWindow()
-  mainWindow.loadURL('file://' + path.join(__dirname, 'assets', 'html', 'file.html'))
+  mainWindow = new BrowserWindow({ titleBarStyle: 'hidden' })
+  mainWindow.loadURL('file://' + path.join(__dirname, 'assets', 'html', 'file.html') + '#README.md')
 
   mainWindow.on('closed', () => {
     mainWindow = null

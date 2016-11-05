@@ -7,13 +7,10 @@
 </head>
 <body>
   <div id="window"></div>
-  <script>
-    const app = require('../../components/window')
-    const React = require('react')
-    const ReactDOM = require('react-dom')
 
-    ReactDOM.render(
-      React.createElement(app, { file: document.location.hash.substring(1) }, null),
+  <script>
+    require('../../containers/file-window').render(
+      document.location.hash.substring(1),
       document.querySelector('#window')
     )
   </script>

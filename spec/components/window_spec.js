@@ -5,11 +5,10 @@ const React = require('react')
 const TestUtils = require('react-addons-test-utils')
 
 describe('Window component', () => {
-  let html = '<h1>Test Window Component</h1>'
   let result = null
 
   beforeEach(() => {
-    let component = React.createElement(Window, { html: html }, null)
+    let component = React.createElement(Window, { file: 'README.md' })
     let renderer = TestUtils.createRenderer()
 
     renderer.render(component)
@@ -26,14 +25,13 @@ describe('Window component', () => {
 
     expect(child.type).to.equal('h1')
     expect(child.props.className).to.equal('window__heading')
-    expect(child.props.children).to.not.be.empty
+    expect(child.props.children).to.equal('README.md')
   })
 
   it('creates a content element', () => {
     let child = result.props.children[1]
 
     expect(child.type).to.be.instanceof(Function)
-    expect(child.props.html).to.equal(html)
-    expect(child.props.children).to.be.null
+    expect(child.props.children).to.be.undefined
   })
 })

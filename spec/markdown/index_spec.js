@@ -1,7 +1,7 @@
 'use strict'
 
 const fs = require('fs')
-const md = require('../../lib/markdown')
+const md = require('app/markdown')
 
 describe('Markdown', () => {
   describe('#toHTML', () => {

@@ -4,7 +4,7 @@
   "author": "David Muto (pseudomuto) <david.muto@gmail.com>",
   "license": "MIT",
   "description": "A cross-platform markdown viewer",
-  "main": "lib/main.js",
+  "main": "app/main.js",
   "repository": {
     "url": "https://github.com/pseudomuto/muto-mark",
     "type": "git"
@@ -12,11 +12,14 @@
   "devDependencies": {
     "chai": "3.5.0",
     "chai-as-promised": "^6.0.0",
+    "electron": "^1.4.4",
     "mocha": "3.1.2",
+    "react-addons-test-utils": "^15.3.2",
     "standard": "8.4.0"
   },
   "scripts": {
-    "test": "standard && mocha spec/**/*_spec.js --require ./spec/helper.js"
+    "app": "electron .",
+    "test": "standard && NODE_PATH=. mocha spec/**/*_spec.js --require ./spec/helper.js"
   },
   "standard": {
     "globals": [
@@ -36,6 +39,8 @@
     }
   },
   "dependencies": {
-    "marked": "0.3.6"
+    "marked": "0.3.6",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
   }
 }

@@ -20,16 +20,8 @@ describe('Window component', () => {
     expect(result.props.className).to.equal('window')
   })
 
-  it('creates a heading element', () => {
-    let child = result.props.children[0]
-
-    expect(child.type).to.equal('h1')
-    expect(child.props.className).to.equal('window__heading')
-    expect(child.props.children).to.equal('README.md')
-  })
-
   it('creates a content element', () => {
-    let child = result.props.children[1]
+    let child = result.props.children
 
     expect(child.type).to.be.instanceof(Function)
     expect(child.props.children).to.be.undefined

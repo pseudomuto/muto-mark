@@ -2,11 +2,15 @@
 
 const gh = require('./github')
 const marked = require('marked')
+const hljs = require('highlight.js')
 
 const defaults = {
   gfm: true,
   tables: true,
-  breaks: false
+  breaks: false,
+  highlight: (code, lang, callback) => {
+    callback(null, hljs.highlightAuto(code).value)
+  }
 }
 
 const toHTML = (markdown, options) => {
@@ -15,7 +19,13 @@ const toHTML = (markdown, options) => {
   return new Promise((resolve, reject) => {
     try {
       let processedMarkdown = settings.gfm ? gh.hubify(markdown) : markdown
-      resolve(marked(processedMarkdown, settings))
+      marked(processedMarkdown, settings, (err, content) => {
+        if (err) {
+          reject(err)
+        } else {
+          resolve(content)
+        }
+      })
     } catch (error) {
       reject(error)
     }

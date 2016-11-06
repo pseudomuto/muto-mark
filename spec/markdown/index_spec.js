@@ -20,7 +20,7 @@ describe('Markdown', () => {
       })
 
       it('escapes underscores in pre tags', () => {
-        expect(result).to.contain('def robot_invasion')
+        expect(result).to.contain('<span class="hljs-title">robot_invasion</span>')
       })
 
       it('treats individual new lines as whitespace', () => {

@@ -16,7 +16,6 @@ class Window extends React.Component {
     return create(
       'div',
       { className: 'window' },
-      create('h1', { className: 'window__heading' }, this.props.file),
       create(Content, { html })
     )
   }

@@ -89,6 +89,18 @@ Maybe you want to print `robot` to the console 1000 times. Why not?
 
 You see, that was formatted as code because it's been indented by four spaces.
 
+You can also use language specific code blocks
+
+```csharp
+private void RobotInvasion()
+{
+  for (var i = 0; i < 1000; i++) 
+  {
+    Console.WriteLine("robot")
+  }
+}
+```
+
 How about we throw some angle braces and ampersands in there?
 
     <div class="footer">
@@ -150,6 +162,8 @@ Table for two
 
 Crazy linking action
 --------------------
+
+http://www.google.com/ is auto-linked.
 
 I get 10 times more traffic from [Google] [1] than from
 [Yahoo] [2] or [MSN] [3].

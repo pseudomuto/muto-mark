@@ -2,16 +2,14 @@
 
 const React = require('react')
 
-class Content extends React.Component {
-  render () {
-    let html = this.props.html
+const Content = (props) => {
+  let html = props.html
 
-    return React.createElement(
-      'div',
-      { className: 'window__content', dangerouslySetInnerHTML: { __html: html } },
-      null
-    )
-  }
+  return React.createElement(
+    'div',
+    { className: 'window__content', dangerouslySetInnerHTML: { __html: html } },
+    null
+  )
 }
 
 Content.propTypes = {

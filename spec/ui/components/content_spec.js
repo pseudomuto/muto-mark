@@ -1,6 +1,6 @@
 'use strict'
 
-const Content = require('app/components/content')
+const Content = require('app/ui/components/content')
 const React = require('react')
 const TestUtils = require('react-addons-test-utils')
 

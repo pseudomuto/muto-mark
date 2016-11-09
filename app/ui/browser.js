@@ -4,7 +4,7 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const ReactRedux = require('react-redux')
 const Redux = require('redux')
-const Window = require('../components/window')
+const Window = require('./components/window')
 
 const actions = require('../actions')
 const createStore = require('../store')

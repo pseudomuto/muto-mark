@@ -1,6 +1,6 @@
 'use strict'
 
-const Window = require('app/components/window')
+const Window = require('app/ui/components/window')
 const React = require('react')
 const TestUtils = require('react-addons-test-utils')
 

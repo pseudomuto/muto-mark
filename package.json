@@ -24,7 +24,7 @@
   "scripts": {
     "app": "electron .",
     "build": "babel src/ --out-dir app",
-    "test": "standard && yarn run build && NODE_PATH=. mocha spec --recursive --require ./spec/helper.js"
+    "test": "standard && yarn run build && NODE_PATH=. mocha spec --compilers js:babel-core/register --recursive --require ./spec/helper.js"
   },
   "standard": {
     "ignore": [

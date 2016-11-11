@@ -1,15 +1,13 @@
-'use strict'
-
-const Window = require('app/ui/components/window').default
-const React = require('react')
-const TestUtils = require('react-addons-test-utils')
+import Window from 'app/ui/components/window'
+import { createElement } from 'react'
+import { createRenderer } from 'react-addons-test-utils'
 
 describe('Window component', () => {
   let result = null
 
   beforeEach(() => {
-    let component = React.createElement(Window, { file: 'README.md', html: '' })
-    let renderer = TestUtils.createRenderer()
+    const component = createElement(Window, { file: 'README.md', html: '' })
+    const renderer = createRenderer()
 
     renderer.render(component)
     result = renderer.getRenderOutput()
@@ -21,7 +19,7 @@ describe('Window component', () => {
   })
 
   it('creates a content element', () => {
-    let child = result.props.children
+    const child = result.props.children
 
     expect(child.type).to.be.instanceof(Function)
     expect(child.props.children).to.be.undefined

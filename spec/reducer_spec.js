@@ -1,7 +1,5 @@
-'use strict'
-
-const reducer = require('app/reducer').default
-const actions = require('app/actions')
+import reducer from 'app/reducer'
+import { CONTENT_CHANGED } from 'app/actions'
 
 describe('Reducer', () => {
   context('when action is unknown', () => {
@@ -23,7 +21,7 @@ describe('Reducer', () => {
 
     beforeEach(() => {
       clock = sinon.useFakeTimers()
-      state = reducer(null, { type: actions.CONTENT_CHANGED, html: '<p>Yeah</p>' })
+      state = reducer(null, { type: CONTENT_CHANGED, html: '<p>Yeah</p>' })
     })
 
     afterEach(() => {

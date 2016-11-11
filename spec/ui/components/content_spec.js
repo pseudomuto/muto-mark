@@ -1,16 +1,14 @@
-'use strict'
-
-const Content = require('app/ui/components/content').default
-const React = require('react')
-const TestUtils = require('react-addons-test-utils')
+import Content from 'app/ui/components/content'
+import { createElement } from 'react'
+import { createRenderer } from 'react-addons-test-utils'
 
 describe('Content component', () => {
-  let html = '<h1>Test Content Component</h1>'
+  const html = '<h1>Test Content Component</h1>'
   let result = null
 
   beforeEach(() => {
-    let component = React.createElement(Content, { html: html }, null)
-    let renderer = TestUtils.createRenderer()
+    const component = createElement(Content, { html: html }, null)
+    const renderer = createRenderer()
 
     renderer.render(component)
     result = renderer.getRenderOutput()

@@ -1,15 +1,13 @@
-'use strict'
-
-const actions = require('app/actions')
+import { CONTENT_CHANGED, convertFileToHTML } from 'app/actions'
 
 describe('Actions', () => {
   describe('#convertFileToHTML', () => {
-    let action = actions.convertFileToHTML('./spec/fixtures/simple.md')
+    const action = convertFileToHTML('./spec/fixtures/simple.md')
 
     it('dispatches CONTENT_CHANGED action after processing markdown', () => {
-      let dispatch = sinon.spy()
-      let expected = {
-        type: actions.CONTENT_CHANGED,
+      const dispatch = sinon.spy()
+      const expected = {
+        type: CONTENT_CHANGED,
         html: '<h1 id="simple-heading">Simple Heading</h1>\n'
       }
 

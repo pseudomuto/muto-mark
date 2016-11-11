@@ -1,6 +1,6 @@
 'use strict'
 
-const reducer = require('app/reducer')
+const reducer = require('app/reducer').default
 const actions = require('app/actions')
 
 describe('Reducer', () => {

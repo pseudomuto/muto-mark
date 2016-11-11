@@ -1,6 +1,6 @@
 'use strict'
 
-const createStore = require('app/store')
+const createStore = require('app/store').default
 
 describe('Store', () => {
   it('exports a function', () => {

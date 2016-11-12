@@ -10,21 +10,22 @@
     "type": "git"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "chai": "3.5.0",
     "chai-as-promised": "^6.0.0",
     "electron": "^1.4.4",
-    "mocha": "3.1.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-mocha": "^3.0.1",
     "react-addons-test-utils": "^15.3.2",
     "sinon": "^1.17.6",
     "standard": "8.4.0"
   },
   "scripts": {
-    "app": "electron .",
-    "build": "babel src/ --out-dir app",
-    "test": "standard && yarn run build && NODE_PATH=. mocha spec --compilers js:babel-core/register --recursive --require ./spec/helper.js"
+    "app": "gulp run",
+    "build": "gulp build",
+    "test": "standard && NODE_PATH=. gulp test"
   },
   "standard": {
     "ignore": [

@@ -5,18 +5,17 @@
     "babel-preset-react": "^6.16.0",
     "chai": "3.5.0",
     "chai-as-promised": "^6.0.0",
-    "electron": "^1.4.4",
+    "electron": "latest",
     "fs-jetpack": "^0.10.2",
     "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
     "gulp-mocha": "^3.0.1",
     "gulp-rollup": "^2.5.1",
+    "react": "^15.3.2",
     "react-addons-test-utils": "^15.3.2",
     "rollup": "^0.36.3",
     "rollup-plugin-babel": "^2.6.1",
     "sinon": "^1.17.6",
-    "standard": "8.4.0",
-    "through2": "^2.0.1"
+    "standard": "^8.5.0"
   },
   "scripts": {
     "app": "gulp run",
@@ -43,8 +42,5 @@
     "env": {
       "mocha": true
     }
-  },
-  "peerDependencies": {
-    "react": "^15.3.2"
   }
 }

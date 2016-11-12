@@ -1,5 +1,5 @@
-const {app, BrowserWindow, dialog, Menu, Tray} = require('electron')
-const path = require('path')
+import {app, BrowserWindow, dialog, Menu, Tray} from 'electron'
+import path from 'path'
 
 const TEMPLATE = 'file://' + path.join(__dirname, 'assets', 'html', 'file.html')
 const ICON = path.join(__dirname, 'assets', 'img', 'trayTemplate.png')
@@ -8,7 +8,7 @@ let mainWindow = null
 let tray = null
 
 const newWindow = () => {
-  let filePaths = dialog.showOpenDialog({
+  const filePaths = dialog.showOpenDialog({
     title: 'Open Markdown File',
     defaultPath: app.getPath('home'),
     filters: [
@@ -18,8 +18,8 @@ const newWindow = () => {
   })
 
   if (filePaths) {
-    let selectedFile = filePaths[0]
-    let win = new BrowserWindow({ title: selectedFile })
+    const selectedFile = filePaths[0]
+    const win = new BrowserWindow({ title: selectedFile })
     win.loadURL(TEMPLATE + '#' + selectedFile)
   }
 }
@@ -31,7 +31,7 @@ app.on('ready', () => {
     mainWindow = null
   })
 
-  let menu = Menu.buildFromTemplate([
+  const menu = Menu.buildFromTemplate([
     { label: 'Open...', click: (item, window) => { newWindow() } },
     { role: 'quit' }
   ])

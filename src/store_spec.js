@@ -1,6 +1,4 @@
-'use strict'
-
-const createStore = require('app/store')
+import createStore from './store'
 
 describe('Store', () => {
   it('exports a function', () => {
@@ -8,8 +6,8 @@ describe('Store', () => {
   })
 
   it('creates a new store object', () => {
-    let store = createStore()
-    let expectedFunctions = ['dispatch', 'subscribe', 'getState']
+    const store = createStore()
+    const expectedFunctions = ['dispatch', 'subscribe', 'getState']
 
     expectedFunctions.forEach((fn) => {
       expect(store[fn]).to.be.instanceof(Function)

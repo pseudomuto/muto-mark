@@ -10,7 +10,7 @@
   <div id="window"></div>
 
   <script>
-    require('../../containers/file-window').render(
+    require('../../browser')(
       document.location.hash.substring(1),
       document.querySelector('#window')
     )

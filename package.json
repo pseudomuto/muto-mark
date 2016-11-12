@@ -1,28 +1,32 @@
 {
-  "name": "muto-mark",
-  "version": "2.0.0",
-  "author": "David Muto (pseudomuto) <david.muto@gmail.com>",
-  "license": "MIT",
-  "description": "A cross-platform markdown viewer",
-  "main": "app/main.js",
-  "repository": {
-    "url": "https://github.com/pseudomuto/muto-mark",
-    "type": "git"
-  },
   "devDependencies": {
+    "babel-plugin-external-helpers": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
     "chai": "3.5.0",
     "chai-as-promised": "^6.0.0",
-    "electron": "^1.4.4",
-    "mocha": "3.1.2",
+    "electron": "latest",
+    "fs-jetpack": "^0.10.2",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^3.0.1",
+    "gulp-rollup": "^2.5.1",
+    "react": "^15.3.2",
     "react-addons-test-utils": "^15.3.2",
+    "rollup": "^0.36.3",
+    "rollup-plugin-babel": "^2.6.1",
     "sinon": "^1.17.6",
-    "standard": "8.4.0"
+    "standard": "^8.5.0"
   },
   "scripts": {
-    "app": "electron .",
-    "test": "standard && NODE_PATH=. mocha spec --recursive --require ./spec/helper.js"
+    "app": "gulp run",
+    "build": "gulp build",
+    "deps": "yarn install && cd app/ && yarn install",
+    "test": "standard && gulp test"
   },
   "standard": {
+    "ignore": [
+      "app/**/*.js"
+    ],
     "globals": [
       "after",
       "afterEach",
@@ -39,14 +43,5 @@
     "env": {
       "mocha": true
     }
-  },
-  "dependencies": {
-    "highlight.js": "^9.8.0",
-    "marked": "0.3.6",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-redux": "^4.4.5",
-    "redux": "^3.6.0",
-    "redux-thunk": "^2.1.0"
   }
 }

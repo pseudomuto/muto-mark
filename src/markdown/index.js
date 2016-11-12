@@ -1,8 +1,8 @@
 'use strict'
 
-const gh = require('./github')
-const marked = require('marked')
-const hljs = require('highlight.js')
+import { hubify } from './github'
+import marked from 'marked'
+import hljs from 'highlight.js'
 
 const defaults = {
   gfm: true,
@@ -13,12 +13,12 @@ const defaults = {
   }
 }
 
-const toHTML = (markdown, options) => {
-  let settings = Object.assign(defaults, options || {})
+export const toHTML = (markdown, options) => {
+  const settings = Object.assign(defaults, options || {})
 
   return new Promise((resolve, reject) => {
     try {
-      let processedMarkdown = settings.gfm ? gh.hubify(markdown) : markdown
+      const processedMarkdown = settings.gfm ? hubify(markdown) : markdown
       marked(processedMarkdown, settings, (err, content) => {
         if (err) {
           reject(err)
@@ -31,5 +31,3 @@ const toHTML = (markdown, options) => {
     }
   })
 }
-
-exports.toHTML = toHTML

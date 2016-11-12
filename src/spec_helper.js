@@ -1,6 +1,6 @@
-const chai = require('chai')
-const chaiAsPromised = require('chai-as-promised')
-const sinon = require('sinon')
+import chai from 'chai'
+import chaiAsPromised from 'chai-as-promised'
+import sinon from 'sinon'
 
 chai.config.includeStack = true
 chai.use(chaiAsPromised)

@@ -12,5 +12,8 @@ cache:
   directories:
     - $HOME/.yarn-cache
 
-install: yarn install
+install: yarn deps
 script: yarn test
+
+notifications:
+  email: false

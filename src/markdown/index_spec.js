@@ -1,7 +1,5 @@
-'use strict'
-
-const fs = require('fs')
-const md = require('app/markdown')
+import fs from 'fs'
+import { toHTML } from './index'
 
 describe('Markdown', () => {
   describe('#toHTML', () => {
@@ -9,8 +7,8 @@ describe('Markdown', () => {
 
     context('with default options', () => {
       before(() => {
-        let raw = fs.readFileSync('spec/fixtures/github.md').toString()
-        return md.toHTML(raw).then(html => {
+        const raw = fs.readFileSync('fixtures/github.md').toString()
+        return toHTML(raw).then(html => {
           result = html
         })
       })
@@ -44,8 +42,8 @@ describe('Markdown', () => {
 
     context('when gfm turned off', () => {
       before(() => {
-        let raw = fs.readFileSync('spec/fixtures/github.md').toString()
-        return md.toHTML(raw, { gfm: false, tables: false }).then(html => {
+        const raw = fs.readFileSync('fixtures/github.md').toString()
+        return toHTML(raw, { gfm: false, tables: false }).then(html => {
           result = html
         })
       })

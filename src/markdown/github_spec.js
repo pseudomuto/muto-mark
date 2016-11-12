@@ -1,4 +1,4 @@
-import { hubify } from 'app/markdown/github'
+import { hubify } from './github'
 
 describe('Github Markdown Processing', () => {
   context('#hubify', () => {

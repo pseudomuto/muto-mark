@@ -1,4 +1,4 @@
-import Window from 'app/ui/components/window'
+import Window from './window'
 import { createElement } from 'react'
 import { createRenderer } from 'react-addons-test-utils'
 

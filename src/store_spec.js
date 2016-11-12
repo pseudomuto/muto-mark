@@ -1,4 +1,4 @@
-import createStore from 'app/store'
+import createStore from './store'
 
 describe('Store', () => {
   it('exports a function', () => {

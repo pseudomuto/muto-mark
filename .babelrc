@@ -1,5 +1,6 @@
 {
   "minified": true,
-  "presets": ["react", "es2015"],
+  "plugins": ["external-helpers"],
+  "presets": ["react", ["es2015", { modules: false }]],
   "sourceMaps": true
 }

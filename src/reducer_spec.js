@@ -1,5 +1,5 @@
-import reducer from 'app/reducer'
-import { CONTENT_CHANGED } from 'app/actions'
+import reducer from './reducer'
+import { CONTENT_CHANGED } from './actions'
 
 describe('Reducer', () => {
   context('when action is unknown', () => {

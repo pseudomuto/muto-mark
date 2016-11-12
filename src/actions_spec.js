@@ -1,8 +1,8 @@
-import { CONTENT_CHANGED, convertFileToHTML } from 'app/actions'
+import { CONTENT_CHANGED, convertFileToHTML } from './actions'
 
 describe('Actions', () => {
   describe('#convertFileToHTML', () => {
-    const action = convertFileToHTML('./spec/fixtures/simple.md')
+    const action = convertFileToHTML('./fixtures/simple.md')
 
     it('dispatches CONTENT_CHANGED action after processing markdown', () => {
       const dispatch = sinon.spy()

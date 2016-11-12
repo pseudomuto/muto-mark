@@ -1,9 +1,9 @@
 const gulp = require('gulp')
-const babel = require('gulp-babel')
+const rollup = require('./rollup')
 
 gulp.task('build', () => {
-  gulp
-    .src('src/**/*.js')
-    .pipe(babel())
-    .pipe(gulp.dest('app'))
+  return Promise.all([
+    rollup('./src/main.js', './app/main.js'),
+    rollup('./src/ui/browser.js', './app/browser.js')
+  ])
 })

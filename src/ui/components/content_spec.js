@@ -1,4 +1,4 @@
-import Content from 'app/ui/components/content'
+import Content from './content'
 import { createElement } from 'react'
 import { createRenderer } from 'react-addons-test-utils'
 

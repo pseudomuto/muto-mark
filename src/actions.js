@@ -1,7 +1,7 @@
 'use strict'
 
 import { readFile } from 'fs'
-import { toHTML } from './markdown'
+import { toHTML } from './markdown/index'
 
 export const CONTENT_CHANGED = 'CONTENT_CHANGED'
 

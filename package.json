@@ -5,7 +5,7 @@
     "babel-preset-react": "^6.16.0",
     "chai": "3.5.0",
     "chai-as-promised": "^6.0.0",
-    "electron": "latest",
+    "electron": "^1.4.6",
     "fs-jetpack": "^0.10.2",
     "gulp": "^3.9.1",
     "gulp-mocha": "^3.0.1",
@@ -15,6 +15,7 @@
     "rollup": "^0.36.3",
     "rollup-plugin-babel": "^2.6.1",
     "sinon": "^1.17.6",
+    "spectron": "^3.4.0",
     "standard": "^8.5.0"
   },
   "scripts": {

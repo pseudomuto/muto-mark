@@ -10,6 +10,7 @@
     "type": "git"
   },
   "dependencies": {
+    "fs-jetpack": "^0.10.2",
     "highlight.js": "^9.8.0",
     "marked": "0.3.6",
     "react": "^15.3.2",
